@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
   <main>
-    <ul></ul>
+    <div>
+      <button id="buttonAddCategory">Añadir Categoria</button>
+      <button id="buttonAddCategory">Añadir Categoria</button>
+    </div>
+
+    <div>
+      <table id="tableCategories">
+        <tr>
+          <th>Categorias</th>
+        </tr>
+        <tr>
+          <td>Sample</td>
+        </tr>
+        <tr>
+          <td>Sample</td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <table id="tableSites">
+        <tr>
+          <th>Site</th>
+          <th>User</th>
+          <th>Created at</th>
+          <th>Actions</th>
+        </tr>
+        <tr>
+          <td>Sitio</td>
+          <td>Usuario</td>
+          <td>Date</td>
+          <td>
+            <button class="btn"><i class="fa fa-home"></i> Go to</button>
+            <button class="btn"><i class="fa fa-file"></i> Edit</button>
+            <button class="btn"><i class="fa fa-close"></i> Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
   </main>
-  <script>
-    let drawData = (data) => {
-      data.forEach(category => {
-        let parent = document.getElementsByTagName('ul')[0]
-        let child = document.createElement('li')
-        // child.innerText = JSON.stringify(category)
-        child.innerText = category.name
-        parent.appendChild(child)
-      })
-    }
-
-    fetch("http://localhost:3000/categories")
-      .then(res => res.json())
-      .then(data => drawData(data))
-  </script>
 </body>
-</html>
+<script src="./scripts.js"></script>
 
-//primer commit
+</html>
