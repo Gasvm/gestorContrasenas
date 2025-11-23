@@ -1,13 +1,38 @@
-table,
-th,
-td {
-  border: 1px solid black;
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-#tableCategories {
-  float: left;
+main > div {
+  flex: 1;
+  min-width: 300px;
 }
 
-#tableSites {
-  float: right;
+#categoryList {
+  list-style: none;
+  padding: 0;
+}
+
+#categoryList li {
+  padding: 10px;
+  margin: 5px 0;
+  background: #f0f0f0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#categoryList li:hover {
+  background: #e0e0e0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
 }
