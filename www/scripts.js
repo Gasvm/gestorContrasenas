@@ -28,6 +28,49 @@ let drawData = (data) => {
     });
 }
 
+function drawSites(sites) {
+    let tbody = document.getElementById('sitesTableBody');
+    tbody.innerHTML = '';
+    
+    if (sites.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4">No hay sites en esta categoría</td></tr>';
+        return;
+    }
+    
+    sites.forEach(site => {
+        let tr = document.createElement('tr');
+        
+        let tdURL = document.createElement('td');
+        tdURL.innerText = site.url;
+        
+        let tdUser = document.createElement('td');
+        tdUser.innerText = site.user;
+        
+        let tdDate = document.createElement('td');
+        tdDate.innerText = site.createdAt;  // ← CAMBIO AQUÍ
+        
+        let tdActions = document.createElement('td');
+        tdActions.innerHTML = `
+            <button class="btn-goto" data-url="${site.url}">
+                <i class="fa fa-home"></i>
+            </button>
+            <button class="btn-edit" data-id="${site.id}">
+                <i class="fa fa-edit"></i>
+            </button>
+            <button class="btn-delete" data-id="${site.id}">
+                <i class="fa fa-trash"></i>
+            </button>
+        `;
+        
+        tr.appendChild(tdURL);
+        tr.appendChild(tdUser);
+        tr.appendChild(tdDate);
+        tr.appendChild(tdActions);
+        
+        tbody.appendChild(tr);
+    });
+}
+
 function loadSites(categoryId) {
     let url = `http://localhost:3000/categories/${categoryId}`;
 
