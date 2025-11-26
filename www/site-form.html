@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Site - Password Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <main>
+        <div class="form-container">
+            <h2>Nuevo Site</h2>
+            
+            <form id="siteForm">
+                <div class="form-group">
+                    <label for="categorySelect">Categoría *</label>
+                    <select id="categorySelect" required>
+                        <option value="">Selecciona una categoría</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="siteName">Nombre *</label>
+                    <input type="text" id="siteName" required placeholder="Ej: Facebook">
+                </div>
+                
+                <div class="form-group">
+                    <label for="siteUrl">URL</label>
+                    <input type="url" id="siteUrl" placeholder="https://ejemplo.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="siteUser">Usuario *</label>
+                    <input type="text" id="siteUser" required placeholder="Ej: juan123">
+                </div>
+                
+                <div class="form-group">
+                    <label for="sitePassword">Contraseña *</label>
+                    <input type="password" id="sitePassword" required>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Crear Site</button>
+                    <button type="button" class="btn-cancel" id="btnCancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="site-form.js"></script>
+</body>
+</html>
