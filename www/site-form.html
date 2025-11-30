@@ -35,10 +35,14 @@
                     <input type="text" id="siteUser" required placeholder="Ej: juan123">
                 </div>
                 
-                <div class="form-group">
-                    <label for="sitePassword">Contraseña *</label>
-                    <input type="password" id="sitePassword" required>
-                </div>
+<div class="form-group">
+    <label for="sitePassword">Contraseña *</label>
+    <div class="password-group">
+        <input type="password" id="sitePassword" required autocomplete="new-password">
+        <button type="button" class="btn-generate" id="btnGeneratePassword">Generar</button>
+        <button type="button" class="btn-generate" id="btnTogglePassword">👁️</button>
+    </div>
+</div>
                 
                 <div class="form-actions">
                     <button type="submit" class="btn-submit">Crear Site</button>
